@@ -14,7 +14,6 @@ public class CharacterControls : MonoBehaviour {
 	public float maxFallSpeed = 20.0f;
 	public float rotateSpeed = 25f; //Speed the player rotate
 	private Vector3 moveDir;
-	public GameObject cam;
 	private Rigidbody rb;
 
 	private float distToGround;
@@ -124,25 +123,7 @@ public class CharacterControls : MonoBehaviour {
 
 	private void Update()
 	{
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
 
-		Vector3 v2 = v * cam.transform.forward; //Vertical axis to which I want to move with respect to the camera
-		Vector3 h2 = h * cam.transform.right; //Horizontal axis to which I want to move with respect to the camera
-		moveDir = (v2 + h2).normalized; //Global position to which I want to move in magnitude 1
-
-		RaycastHit hit;
-		if (Physics.Raycast(transform.position, -Vector3.up, out hit, distToGround + 0.1f))
-		{
-			if (hit.transform.tag == "Slide")
-			{
-				slide = true;
-			}
-			else
-			{
-				slide = false;
-			}
-		}
 	}
 
 	float CalculateJumpVerticalSpeed () {

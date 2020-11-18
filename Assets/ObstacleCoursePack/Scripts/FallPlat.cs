@@ -9,13 +9,11 @@ public class FallPlat : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
-		foreach (ContactPoint contact in collision.contacts)
-		{
-			//Debug.DrawRay(contact.point, contact.normal, Color.white);
-			if (collision.gameObject.tag == "Player")
+		Debug.Log("What have I collided with? " + collision.gameObject.name);
+			if (collision.gameObject.name.Equals("XRRig"))
 			{
 				StartCoroutine(Fall(fallTime));
-			}
+				Debug.Log("Collided sucessfully");
 		}
 	}
 
