@@ -10,7 +10,10 @@ public class PlasmaFloor : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		XRRig.transform.position = checkPoint;
-		// platformFall.ResetPlatform();
+		if(other.tag == "Player")
+        {
+			XRRig.transform.position = checkPoint;
+			// platformFall.ResetPlatform();
+		}
 	}
 }

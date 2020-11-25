@@ -9,12 +9,10 @@ public class PlatformFall : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
-		Debug.Log("Collided sucessfully");
 		Invoke("Fall", dissapearTime);
 		Invoke("ResetPlatform", reappearTime);
+		
 	}
-
-	// add setactive true when falling through level collider
 
 	public void Fall()
 	{
